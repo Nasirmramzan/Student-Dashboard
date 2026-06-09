@@ -19,7 +19,7 @@ const msalConfig = {
         // When running locally, it's usually http://localhost:8080 or similar.
         // When hosted on GitHub Pages, it will be the GitHub URL (e.g., https://yourusername.github.io/student-dashboard/)
         // You MUST register this exact URL in the Azure Portal > Authentication > Single-page application redirect URIs.
-        redirectUri: window.location.origin
+        redirectUri: window.location.href.split('?')[0].split('#')[0]
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
