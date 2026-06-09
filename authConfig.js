@@ -32,7 +32,7 @@ const msalConfig = {
  * We need 'Files.Read' to read the Excel file from OneDrive/SharePoint.
  */
 const loginRequest = {
-    scopes: ["User.Read", "Files.Read"]
+    scopes: ["User.Read", "Files.Read", "Files.Read.Shared", "Files.Read.All"]
 };
 
 /**

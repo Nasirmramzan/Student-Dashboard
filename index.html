@@ -80,12 +80,23 @@
               headers: headers
           };
 
-          const graphResponse = await fetch(GRAPH_FILE_ENDPOINT, options);
-          if (!graphResponse.ok) {
-              throw Error("Failed to fetch file from OneDrive: " + graphResponse.statusText);
-          }
+          let metadataEndpoint = GRAPH_FILE_ENDPOINT;
+          if (metadataEndpoint.endsWith(":/content")) metadataEndpoint = metadataEndpoint.substring(0, metadataEndpoint.length - 9);
+          else if (metadataEndpoint.endsWith("/content")) metadataEndpoint = metadataEndpoint.substring(0, metadataEndpoint.length - 8);
 
-          const arrayBuffer = await graphResponse.arrayBuffer();
+          const metadataResponse = await fetch(metadataEndpoint, options);
+          if (!metadataResponse.ok) {
+              const errText = await metadataResponse.text();
+              throw Error("Failed to access file metadata: " + metadataResponse.status + " " + errText);
+          }
+          const metadata = await metadataResponse.json();
+          const downloadUrl = metadata["@microsoft.graph.downloadUrl"];
+          if (!downloadUrl) throw Error("No download URL provided by Microsoft Graph.");
+
+          const fileResponse = await fetch(downloadUrl);
+          if (!fileResponse.ok) throw Error("Failed to download file contents.");
+
+          const arrayBuffer = await fileResponse.arrayBuffer();
           const data = new Uint8Array(arrayBuffer);
           const workbook = XLSX.read(data, {type: 'array'});
           
