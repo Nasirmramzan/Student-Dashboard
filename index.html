@@ -440,11 +440,11 @@ tbody td{padding:5px 10px;white-space:nowrap;max-width:200px;overflow:hidden;tex
 </header>
 
 <div class="upload-zone" id="dropzone">
-  <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+  <label style="display:none;align-items:center;gap:8px;cursor:pointer">
     <button class="upload-btn" onclick="document.getElementById('file-in').click();event.preventDefault()">⬆ Upload Master Sheet</button>
     <input type="file" id="file-in" accept=".xlsx,.xls,.csv" style="display:none" onchange="handleFile(this.files[0])">
   </label>
-  <div class="upload-hint">Drop Excel (.xlsx/.xls) or CSV &nbsp;|&nbsp; Sheet: <b>Master Data</b> &nbsp;|&nbsp; 100% offline</div>
+  <div class="upload-hint" style="display:none;">Drop Excel (.xlsx/.xls) or CSV &nbsp;|&nbsp; Sheet: <b>Master Data</b> &nbsp;|&nbsp; 100% offline</div>
   <div id="upload-status" class="upload-status"></div>
   <div id="upload-error" class="upload-error"></div>
 </div>

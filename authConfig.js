@@ -48,4 +48,4 @@ const loginRequest = {
  * 
  * For this example, let's assume it's in the root of OneDrive in a folder called "DashboardData" and named "Data.xlsx".
  */
-const GRAPH_FILE_ENDPOINT = "https://graph.microsoft.com/v1.0/me/drive/root:/DashboardData/Data.xlsx:/content";
+const GRAPH_FILE_ENDPOINT = "https://graph.microsoft.com/v1.0/shares/u!aHR0cHM6Ly9lZGlhcmFiZW1pLW15LnNoYXJlcG9pbnQuY29tLzp4Oi9nL3BlcnNvbmFsL25hc2lyX21fZWRpX2FlL0lRQTEtbUxSX3JxelNvTng2Znh2a1BJdEFWd25UOUt3YW5lWmFDNlJIV2Z5eEtFP2U9ZlJ6UUlN/driveItem/content";
