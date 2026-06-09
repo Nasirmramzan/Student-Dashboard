@@ -7,7 +7,7 @@ const msalConfig = {
     auth: {
         // 'clientId' is the Application (client) ID from the app registration in Azure portal.
         // YOU MUST REPLACE THIS WITH YOUR ACTUAL CLIENT ID AFTER REGISTRATION!
-        clientId: "6eb0408d-9664-4068-a5ac-a88ba489b906",
+        clientId: "ff0dd981-1b02-480e-b11a-0ab3c1ce0363",
         
         // 'authority' is the Azure AD directory (tenant) endpoint.
         // Replace 'YOUR_TENANT_ID_HERE' with your actual Directory (tenant) ID.
