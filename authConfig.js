@@ -11,7 +11,7 @@ const msalConfig = {
         
         // 'authority' is the Azure AD directory (tenant) endpoint.
         // Replace 'YOUR_TENANT_ID_HERE' with your actual Directory (tenant) ID.
-        // If your users are only within your organization, use: https://login.microsoftonline.com/YOUR_TENANT_ID_HERE
+        // If your users are only within your organization, use: https://login.microsoftonline.com/e15a0c3c-2ae3-4e09-9a5a-2761fe14856f
         // If it's multi-tenant or personal Microsoft accounts, use: https://login.microsoftonline.com/common
         authority: "https://login.microsoftonline.com/e15a0c3c-2ae3-4e09-9a5a-2761fe14856f",
         
