@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -22,6 +22,9 @@
           const currentAccounts = msalInstance.getAllAccounts();
           if (currentAccounts.length > 0) {
               handleResponse({ account: currentAccounts[0] });
+          } else {
+              // Automatically prompt login on page load
+              msalInstance.loginRedirect(loginRequest);
           }
       }
   }
